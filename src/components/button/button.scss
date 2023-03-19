@@ -1,0 +1,25 @@
+.uk__button {
+    &__default{
+        font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-weight: 700;
+        
+        min-width: 5.2rem;
+        padding: 1rem 1.5rem;
+        border: 0;
+        border-radius: 1rem;
+        
+        cursor: pointer;
+        display: inline-block;
+        line-height: 1
+    }
+
+    &__type{
+        &-primary {
+           background-color: violet;
+        }
+
+        &-secondary {
+           color: violet;
+        }
+    }
+}

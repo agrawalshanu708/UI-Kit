@@ -1,7 +1,8 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { Button } from '../../components/button/Button';
+import { BUTTON_TYPE } from '../../enum';
 
-import { Button } from './Button';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -16,26 +17,29 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
-export const Primary = Template.bind({});
+export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  primary: true,
-  label: 'Button',
+Default.args = {
+  children: 'Default Button',
 };
 
-export const Secondary = Template.bind({});
-Secondary.args = {
-  label: 'Button',
-};
-
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
-};
+export const types = Template.bind({});
+types.args = {};
+types.parameters = {
+  docs: {
+    description: {
+      story: 'Types of Button'
+    }
+  }
+}
+types.decorators = [
+  () => (
+    <div style = {{
+      display: 'flex', justifyContent: 'space-around'
+    }}>
+      <Button {...types.args} type={BUTTON_TYPE.PRIMARY}>Primary</Button>
+      <Button  {...types.args} type={BUTTON_TYPE.SECONDARY}>Secondary</Button>
+      <Button  {...types.args} type={BUTTON_TYPE.TERTIARY}>Tertiary</Button>
+    </div>
+  )
+]
