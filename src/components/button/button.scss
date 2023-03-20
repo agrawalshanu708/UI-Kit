@@ -1,25 +1,108 @@
-.uk__button {
-    &__default{
-        font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-        font-weight: 700;
-        
-        min-width: 5.2rem;
-        padding: 1rem 1.5rem;
-        border: 0;
-        border-radius: 1rem;
-        
-        cursor: pointer;
-        display: inline-block;
-        line-height: 1
-    }
+@import "src/styles/main";
 
-    &__type{
-        &-primary {
-           background-color: violet;
+.cl__button{
+    &__container{
+    }
+    
+    &__button{
+        &-common{
+            background-color: transparent;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            border: 1px solid;
+            cursor: pointer; 
+            
+            // min-width: 12rem;
+
+            font-size: 1.6rem;
+            line-height: 2rem;
+            color: $cl-text-primary;
+            text-decoration: none;
+            font-weight: 700;
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
-        &-secondary {
-           color: violet;
+        &-common:focus{
+            outline: black solid 1px;
+        }
+
+        &-primary{
+            background-color: $cl-color-primary;
+            color: $cl-text-white;
+        }
+
+        &-primary:hover{
+            background-color: $cl-color-primary-hover;
+        }
+        
+        &-primary:active{
+            background-color: $cl-color-primary-hover;
+            outline: none;
+        }
+    
+        &-secondary{
+            background-color: $cl-color-secondary;
+            color: $cl-text-white;
+        }
+
+        &-secondary:hover{
+            background-color: $cl-color-secondary-hover;
+        }
+
+        &-secondary:active{
+            background-color: $cl-color-secondary-hover;
+        }
+
+        &-ghost{
+            background-color: $cl-color-ghost;
+            color: $cl-text-white;
+            border: 1px solid $cl-color-primary
+        }
+ 
+        &-ghost:hover{
+            background-color: $cl-color-ghost-hover;
+            color: $cl-text-primary;
+        }
+
+        &-ghost:active{
+            background-color: $cl-color-ghost-hover;
+            color: $cl-text-primary;
+        }
+
+        &-text{
+             border: none;
+        }
+
+        &-disabled{
+            background-color: rgba(0,0,0,0.2);
+        } 
+        
+        &-small{
+            height: 3.8rem;
+        }
+
+        &-only{
+          &-child {
+            min-width: unset;
+        }
+      }
+    }
+
+    &__icon {
+        &-left{
+           margin-right: 0.4rem;
+        }
+
+        &-right {
+           margin-left: 0.4rem;
+        }
+
+        &-loading {
+            margin-left: 0.4rem;
         }
     }
+
 }
